@@ -35,4 +35,4 @@ Note: For the validation step, prepare a .csv file containing SMILES with biocla
 
 Our model generates output in binary value (1 or 0), where 1 indicates compound to be permeable, while 0 indicates non-permeable
  
-**Please make sure to keep all the required files (P_gp_subs.pkl, data_preprocessing.py, scaler, featuers.txt, inputfile.csv)in the working directory.**
+**Please ensure that all the necessary files (P_gp_subs.pkl, data_preprocessing.py, scaler, features.txt, inputfile.csv) are kept in the working directory.**
