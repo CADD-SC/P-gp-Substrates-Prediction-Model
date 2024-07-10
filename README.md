@@ -1,9 +1,9 @@
 # P-gp-Substrates-Prediction-Model
-Machine Learning-based prediction model for P-glycoprotein substrate prediction in early stage drug discovery
+Machine learning-based prediction model for P-glycoprotein substrate prediction in early stage drug discovery
 
 ## Introduction: ## 
 
-Welcome to our repository, here we provide machine learning model to efficiently predict the P-glycoprotein substrate of target drug compounds in early stage of drug discovery process.
+Welcome to our repository, here we provide machine learning model to efficiently predict the P-glycoprotein substrate of target drug compounds in early stage of drug discovery process
 
 ## Dependencies ##
 
@@ -33,6 +33,6 @@ Note: For the validation step, prepare a .csv file containing SMILES with biocla
 
 **Output:**
 
-Our model generates output in binary value (1 or 0), where 1 indicates compound to be permeable, while 0 indicates non-permeable
+Our model generates output in binary value (1 or 0), where 1 indicates compound to be substrate, while 0 indicates non-substrate
  
-**Please ensure that all the necessary files (P_gp_subs.pkl, data_preprocessing.py, scaler, features.txt, inputfile.csv) are kept in the working directory.**
+**Please ensure that all the necessary files (P_gp_subs.pkl, data_preprocessing.py, scaler, features.txt, inputfile.csv) are kept in the working directory**
