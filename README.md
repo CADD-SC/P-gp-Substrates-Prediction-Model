@@ -1,9 +1,18 @@
 # P-gp-Substrates-Prediction-Model
 Machine learning-based prediction model for P-glycoprotein substrate prediction in early stage drug discovery
 
-## Introduction: ## 
+## Introduction ## 
 
-Welcome to our repository, here we provide machine learning model to efficiently predict the P-glycoprotein substrate of target drug compounds in early stage of drug discovery process
+Welcome to our repository, here we provide machine learning model to efficiently predict the P-glycoprotein (P-gp) substrate of target drug compounds in early stage of drug discovery process.
+P-gp is an important membrane-bound transporter protein that plays a crucial role in the absorption, distribution, and excretion of many drugs. Predicting whether a compound is a P-gp substrate helps determine its absorption and distribution in the body.
+
+## Classification criteria ##
+The model uses an efflux ratio threshold:
+<p>
+  If the efflux ratio &ge; 2, the compound is <strong>P-gp Substrate</strong> and belongs to class 1.
+  If the efflux ratio &lt; 2, it is <strong>Non-Substrate</strong> and belongs to class 0.
+</p>
+
 
 ## Dependencies ##
 
@@ -22,14 +31,14 @@ Welcome to our repository, here we provide machine learning model to efficiently
 ```
 $ python model.py --prediction --file_name [filename] --model_path P_gp_subs.pkl
 ```
-Note: For the prediction step, prepare a .csv file containing SMILES without bioclass (e.g., test_set.csv)
+<strong>Note:</strong> For the prediction step, prepare a .csv file containing SMILES without bioclass (e.g., test_set.csv)
 
 **To run the validation:**
 
 ```
 $ python model.py --validation --file_name [filename] --model_path P_gp_subs.pkl
 ```
-Note: For the validation step, prepare a .csv file containing SMILES with bioclass (0 or 1) (e.g., valid_set.csv)
+<strong>Note:</strong> For the validation step, prepare a .csv file containing SMILES with bioclass (0 or 1) (e.g., valid_set.csv)
 
 **Output:**
 
