@@ -10,7 +10,7 @@ P-gp is an important membrane-bound transporter protein that plays a crucial rol
 The model uses an efflux ratio threshold:
 <p>
   If the efflux ratio &ge; 2, the compound is <strong>P-gp Substrate</strong> and belongs to class 1.
-  If the efflux ratio &lt; 2, it is <strong>Non-Substrate</strong> and belongs to class 0.
+  If the efflux ratio &lt; 2, it is <strong>Non-P-gp Substrate</strong> and belongs to class 0.
 </p>
 
 
