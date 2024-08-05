@@ -7,12 +7,16 @@ Welcome to our repository, here we provide machine learning model to efficiently
 P-gp is an important membrane-bound transporter protein that plays a crucial role in the absorption, distribution, and excretion of many drugs. Predicting whether a compound is a P-gp substrate helps determine its absorption and distribution in the body.
 
 ## Classification criteria ##
-The model uses an efflux ratio threshold:
-<p>
-  If the efflux ratio &ge; 2, the compound is <strong>P-gp Substrate</strong> and belongs to class 1.
-  If the efflux ratio &lt; 2, it is <strong>Non-P-gp Substrate</strong> and belongs to class 0.
-</p>
+<strong>The model uses an efflux ratio threshold:</strong>
 
+The model classifies a compound based on its predicted efflux ratio value. If the efflux ratio is greater than or equal to 2, the compound is classified as class 1; otherwise, it is classified as class 0. 
+
+Additionally, the model provides the probability that each compound belongs to its respective class. If classified as class 1, the compound is identified as a "substrate" of P-glycoprotein, along with the associated probability.
+The efflux ratio (ER) is defined as the ratio of secretory permeability to absorptive permeability: 
+
+𝐸𝑅= P<sub>app</sub>(a→b) / P<sub>app</sub> (b→a) 
+
+where P<sub>app</sub>(a→b) represents permeability from the apical to the basolateral side (absorption) and P<sub>app</sub> (b→a) represents permeability from the basolateral to the apical side (secretion).
 
 ## Dependencies ##
 
@@ -29,19 +33,21 @@ The model uses an efflux ratio threshold:
 **To run the prediction:**
 
 ```
-$ python model.py --prediction --file_name [filename] --model_path P_gp_subs.pkl
+$ python model.py --prediction --file_name [filename] 
 ```
 <strong>Note:</strong> For the prediction step, prepare a .csv file containing SMILES without bioclass (e.g., test_set.csv)
 
 **To run the validation:**
 
 ```
-$ python model.py --validation --file_name [filename] --model_path P_gp_subs.pkl
+$ python model.py --validation --file_name [filename] 
 ```
 <strong>Note:</strong> For the validation step, prepare a .csv file containing SMILES with bioclass (0 or 1) (e.g., valid_set.csv)
 
 **Output:**
 
-Our model generates output in binary value (1 or 0), where 1 indicates compound to be substrate, while 0 indicates non-substrate
+Our model generates output in binary value (1 or 0), where 1 indicates compound to be substrate, while 0 indicates non-substrate.
+
+Additionally, the model provides the probability that each compound belongs to its respective class. If classified as class 1, the compound is identified as a "substrate" of P-glycoprotein, along with the associated probability.
  
 **Please ensure that all the necessary files (P_gp_subs.pkl, data_preprocessing.py, scaler, features.txt, inputfile.csv) are kept in the working directory**
